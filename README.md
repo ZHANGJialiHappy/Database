@@ -139,27 +139,20 @@ arithmetic operators :     + - * /
 REPLACE(‘ABC’, ‘A’, ‘D’, )
 
 ### Text Function 文本处理函数
-RTRIM(),      LTRIM(),      TRIM()
-
-NOW()
-
-LEFT()          RIGHT()
-
-LENGTH()    DATALENGTH()  LEN()
-
-LOWER()      LCASE(Access)
-
-SOUNDEX()
-
-UPPER()      UCASE(Access)
-
-DATEPART(yy, SQL Server ) ,       DATEPART(‘yyyy’, Access)
-
-DATE_PART(‘year’, PostgreSQL) ,       to_number(to_char(Oracle, 'YYYY'))
-
-LIMIT 5 OFFSET 5
-
-LEFT(name, 1),    RIGHT(name, 1)
+|                                                                 |
+| ---------------------------------------------------------------:|
+|RTRIM(),      LTRIM(),      TRIM()                               |
+|NOW()                                                            |
+|LENGTH(),     DATALENGTH(), LEN()                                |
+|LOWER(),      LCASE(Access)                                      |
+|SOUNDEX()                                                        |
+|LEFT(),       RIGHT()                                            |
+|UPPER(),      UCASE(Access)                                      |
+|DATEPART(yy, SQL Server ), DATEPART(‘yyyy’, Access)              |
+|SOUNDEX()                                                        |
+|DATE_PART(‘year’, PostgreSQL), to_number(to_char(Oracle, 'YYYY'))|
+|LIMIT 5 OFFSET 5                                                 |
+|LEFT(name, 1),    RIGHT(name, 1)                                 |
 
 ### Numeric Functions
 ABS()       
@@ -180,11 +173,13 @@ MIN()
 SUM()       
 
 ## 7/5/2020
+```
 SELECT … FROM ...
 WHERE
 GROUP BY 
 HAVING
 ORDER BY
+```
 
 ## 8/5/2020
 ### SUBQUERY
@@ -227,13 +222,13 @@ SELECT … FROM … WHERE …> ALL(Subquery)
 WHERE Table.column = table2.column2
 
 ### Self Join
+```
 SELECT Table1.id1, table 2.name
-FROM table1, table2
-WHERE table1.id1=table2.id2;
+FROM table AS table1, table AS table2
+WHERE table1.id1=table2.id2 AND ...=....;
+```
 
 /*Correlated subquery*/
-SELECT name, continent
-FROM world x
 ```
 WHERE population>ALL(SELECT 3*population 
                       FROM world y
@@ -244,28 +239,34 @@ WHERE population>ALL(SELECT 3*population
 ### Natural Join
 
 ### Outer Join
+```
 /*Inner Join*/
 SELECT Table1.id1, table 2.name
 FROM table1 INNER JOIN table2
 ON  table1.id1=table2.id2;
+```
 
-LEFT JOIN
+LEFT JOIN,
 RIGHT JOIN
 
 ## 10/5/2020
 ### Union/Compound Query
+```
 SELECT … FROM …
 WHERE ….=....
 UNION
 SELECT … FROM…
 WHERE ….=...
+```
 
 /* display repeated result of 2 SELECT*/
+```
 SELECT … FROM …
 WHERE ….=....
 UNION ALL
 SELECT … FROM…
 WHERE ….=...
+```
 
 
 
