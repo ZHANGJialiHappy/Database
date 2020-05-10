@@ -73,6 +73,7 @@ WHERE … = …
 
 ### WHERE Clause operator
 
+| Tables        | Are           | Cool  |
 | -------------:|--------------:| -----:|
 | <>            |  !=           | <     |
 | >             | <=            | >=    |
