@@ -7,9 +7,12 @@ SELECT * FROM
 
 SELECT DISTINCT … FROM …
 
-SELECT TOP … FROM ....                                           (SQL server, Access)
+SELECT TOP … FROM ....    (SQL server, Access)
+
 SELECT … FROM… FETCH FIRST  .. ROWS ONLY (DB2)
+
 SELECT … FROM… WHERE ROWNUM <= ...            (Oracle)
+
 SELECT … FROM … LIMIT …                                      (MySQL, MariaDB, postgreSQL, SQLite)
 
 SELECT … FROM … LIMIT 5 OFFSET 3    ;   SELECT … FROM … LIMIT 3,5
