@@ -22,16 +22,31 @@ SELECT … FROM … LIMIT 5 OFFSET 3    ;   SELECT … FROM … LIMIT 3,5
 ## 3/5/2020 
 ### Order
 ORDER BY Clause 
-SELECT … FROM … ORDER BY …
+```
+SELECT … FROM … 
+ORDER BY …
+```
+```
+SELECT a, b, c  
+FROM … 
+ORDER BY b,c
+```
+```
+SELECT a, b, c 
+FROM … 
+ORDER BY 2 /*2nd column*/, 3 /*3rd column*/
+```
+```
+SELECT a, b, c  
+FROM … 
+ORDER BY b DESC, c
+```
 
-SELECT a, b, c  FROM … ORDER BY b,c
-SELECT a, b, c FROM … ORDER BY 2 /*2nd column*/, 3 /*3rd column*/
-
-SELECT a, b, c  FROM … ORDER BY b DESC, c
-
-Filter
+### Filter
+```
 SELECT … FROM …
 WHERE … = …
+```
 
 ### WHERE Clause operator
 =
