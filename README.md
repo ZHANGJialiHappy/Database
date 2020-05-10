@@ -140,16 +140,26 @@ REPLACE(‘ABC’, ‘A’, ‘D’, )
 
 ### Text Function 文本处理函数
 RTRIM(),      LTRIM(),      TRIM()
+
 NOW()
+
 LEFT()          RIGHT()
+
 LENGTH()    DATALENGTH()  LEN()
+
 LOWER()      LCASE(Access)
+
 SOUNDEX()
+
 UPPER()      UCASE(Access)
-DATEPART(yy, SQL Server )        DATEPART(‘yyyy’, Access)   
-DATE_PART(‘year’, PostgreSQL)        to_number(to_char(Oracle, 'YYYY'))
+
+DATEPART(yy, SQL Server ) ,       DATEPART(‘yyyy’, Access)
+
+DATE_PART(‘year’, PostgreSQL) ,       to_number(to_char(Oracle, 'YYYY'))
+
 LIMIT 5 OFFSET 5
-LEFT(name, 1)    RIGHT(name, 1)
+
+LEFT(name, 1),    RIGHT(name, 1)
 
 ### Numeric Functions
 ABS()       
