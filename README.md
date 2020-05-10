@@ -13,10 +13,11 @@ SELECT … FROM… WHERE ROWNUM <= ...            (Oracle)
 SELECT … FROM … LIMIT …                                      (MySQL, MariaDB, postgreSQL, SQLite)
 
 SELECT … FROM … LIMIT 5 OFFSET 3    ;   SELECT … FROM … LIMIT 3,5
+    
+/*  ….   */   使用注释
 
-#     /*  ….   */   使用注释
-
-3/5/2020 Order
+## 3/5/2020 
+### Order
 ORDER BY Clause 
 SELECT … FROM … ORDER BY …
 
@@ -72,7 +73,7 @@ WHERE … LIKE ‘[^ab]%’ /* Access use ！to object */;
 SELECT … FROM
 WHERE NOT … LIKE ‘[ab]%’ 
 
-Concatenate
+### Concatenate
 Concat(...,...)
 SELECT … +... +...  FROM ...  /* SQL Server*/
 SELECT … ||... ||...  FROM ... /* Access*/
@@ -83,7 +84,7 @@ SQL  arithmetic operators :     + - * /
 
 REPLACE(‘ABC’, ‘A’, ‘D’, )
 
-Text Function 文本处理函数
+### Text Function 文本处理函数
 RTRIM(),      LTRIM(),      TRIM()
 NOW()
 LEFT()          RIGHT()
@@ -97,12 +98,10 @@ LIMIT 1
 
 LEFT(name, 1)    RIGHT(name, 1)
 
-
-
-Numeric Functions
+### Numeric Functions
 ABS()       COS()     SIN()       TAN()       EXP()       PI()      SQRT()  ROUND(123, -2)  CAST(... AS int)
 
-Aggregate Function
+### Aggregate Function
 AVG(DISTINCT ...)     COUNT()     MAX()      MIN()     SUM()       
 
 ## 7/5/2020
@@ -114,30 +113,34 @@ ORDER BY
 
 ## 8/5/2020
 ### SUBQUERY
+```
 SELECT cust_id
 FROM Orders
-WHERE order_num IN (SELECT order_num
-                                      FROM OrderItems
-                                      WHERE prod_id = 'RGAN01'
-                                       );
-
+WHERE order_num IN(SELECT order_num
+                    FROM OrderItems
+                    WHERE prod_id = 'RGAN01'
+                    );
+```
+```
 SELECT cust_name, cust_state, (
-                                                       SELECT COUNT(*)
-                                                        FROM Orders
-                                                        WHERE Orders.cust_id = Customers.cust_id
-                                                        ) AS orders
+                               SELECT COUNT(*)
+                               FROM Orders
+                               WHERE Orders.cust_id = Customers.cust_id
+                               ) AS orders
 FROM Customers
 ORDER BY cust_name;
-
-SELECT name, 
-                      CONCAT
-                                   (CAST
-                                              (ROUND(100*population/(SELECT population FROM world 
-                                                                                           WHERE name='Germany'),0 )
-                                   AS int)
-                       , '%')
+```
+```
+SELECT name, CONCAT
+                  (CAST
+                       (ROUND(100*population/(SELECT population FROM world 
+                                              WHERE name='Germany')
+                          ,0 )
+                   AS int)
+              , '%')
 FROM world
 WHERE continent='Europe';
+```
 
 ANY, ALL
 SELECT … FROM … WHERE …> ANY(Subquery) 
@@ -165,7 +168,7 @@ WHERE population>ALL(SELECT 3*population
 
 ### Natural Join
 
-Outer Join
+### Outer Join
 /*Inner Join*/
 SELECT Table1.id1, table 2.name
 FROM table1 INNER JOIN table2
@@ -174,8 +177,8 @@ ON  table1.id1=table2.id2;
 LEFT JOIN
 RIGHT JOIN
 
-10/5/2020
-Union/Compound Query
+## 10/5/2020
+### Union/Compound Query
 SELECT … FROM …
 WHERE ….=....
 UNION
