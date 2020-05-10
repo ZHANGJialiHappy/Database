@@ -249,6 +249,23 @@ ON  table1.id1=table2.id2;
 LEFT JOIN,
 RIGHT JOIN
 
+### Create several Join
+```
+SELECT actor.name
+FROM movie, actor, casting
+WHERE movie.id=casting.movieid 
+             AND actor.id=casting.actorid 
+             AND movie.title= 'Alien';
+             
+SELECT actor.name
+FROM actor
+JOIN casting
+ON casting.actorid = actor.id
+JOIN movie
+ON movie.id = casting.movieid
+WHERE movie.title = 'Alien';
+```
+
 ## 10/5/2020
 ### Union/Compound Query
 ```
