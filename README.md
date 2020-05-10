@@ -1,21 +1,44 @@
 # SQL
 ## 2/5/2020 
 ### QUERY（SELECT）
-SELECT …,...,   FROM…
-
+```
+SELECT …,...,   
+FROM…
+```
+```
 SELECT * FROM
-
-SELECT DISTINCT … FROM …
-
-SELECT TOP … FROM ....    (SQL server, Access)
-
-SELECT … FROM… FETCH FIRST  .. ROWS ONLY (DB2)
-
-SELECT … FROM… WHERE ROWNUM <= ...            (Oracle)
-
-SELECT … FROM … LIMIT …                                      (MySQL, MariaDB, postgreSQL, SQLite)
-
-SELECT … FROM … LIMIT 5 OFFSET 3    ;   SELECT … FROM … LIMIT 3,5
+```
+```
+SELECT DISTINCT … 
+FROM …
+```
+```
+SELECT TOP … 
+FROM ....    /*(SQL server, Access)*/
+```
+```
+SELECT … 
+FROM… 
+FETCH FIRST  .. ROWS ONLY /*(DB2)*/
+```
+```
+SELECT … 
+FROM… 
+WHERE ROWNUM <= ...   /*(Oracle)*/
+```
+```
+SELECT … 
+FROM … 
+LIMIT …      /*(MySQL, MariaDB, postgreSQL, SQLite)*/
+```
+```
+SELECT … 
+FROM … 
+LIMIT 5 OFFSET 3 ; 
+SELECT … 
+FROM … 
+LIMIT 3,5
+```
     
 /*  ….   */   使用注释
 
@@ -59,68 +82,105 @@ WHERE … = …
 IS NULL
 BETWEEN...AND
 !>     !<
-
+```
 SELECT … FROM …
 WHERE … IN (...,...);
+```
+```
 SELECT … FROM …
 WHERE …=... OR …=...
-            XOR       /* (A AND Not B) or (Not A AND B) */
-
+```
+```
+SELECT … FROM …
+WHERE …=... XOR …=...
+ /* (A AND Not B) or (Not A AND B) */
+ ```
+```
 SELECT … FROM …
 WHERE …=... AND …=...
-
+```
+```
 SELECT .... FROM …
 WHERE NOT … = …
+```
 
 ## 4/5/2020
 ### 通配符 (Wildcard)
 搜索模式（search pattern）
 谓语 （predicate）
+```
 SELECT … FROM …
 WHERE … LIKE ‘_ ab’      /* Microsoft Access 用？*/
-
+```
+```
 SELECT … FROM …
-WHERE … LIKE ‘a%’    LIKE ‘%a%’   LIKE ‘a%b’     /* Microsoft Access  use *  not % */
-
+WHERE … LIKE ‘a%’   /* LIKE ‘%a%’   LIKE ‘a%b’ */    /* Microsoft Access  use *  not % */
+```
+```
 SELECT … FROM
-WHERE … LIKE ‘[ab]%’  /*Oonly use in Access and SQL Server*/
-              [a-f]  
-
+WHERE … LIKE ‘[ab]%’  /*Only use in Access and SQL Server*/
+              /*[a-f]*/
+```
+```
 SELECT … FROM
 WHERE … LIKE ‘[^ab]%’ /* Access use ！to object */;
 SELECT … FROM
 WHERE NOT … LIKE ‘[ab]%’ 
+```
 
 ### Concatenate
 Concat(...,...)
-SELECT … +... +...  FROM ...  /* SQL Server*/
-SELECT … ||... ||...  FROM ... /* Access*/
-SELECT Concat(...,...)  FROM ...  /* MariaDB, My SQL*/
+```
+SELECT … +... +...  FROM ...  /* SQL Server*/;
+SELECT … ||... ||...  FROM ... /* Access*/;
+SELECT Concat(...,...)  FROM ...  /* MariaDB, My SQL*/;
+```
 AS 别名 AS “Maria DB”    AS[sql Server] 
 
-SQL  arithmetic operators :     + - * /
+arithmetic operators :     + - * /
 
 REPLACE(‘ABC’, ‘A’, ‘D’, )
 
 ### Text Function 文本处理函数
 RTRIM(),      LTRIM(),      TRIM()
+
 NOW()
+
 LEFT()          RIGHT()
+
 LENGTH()    DATALENGTH()  LEN()
+
 LOWER()      LCASE(Access)
+
 SOUNDEX()
+
 UPPER()      UCASE(Access)
-DATEPART(yy, SQL Server )        DATEPART(‘yyyy’, Access)      
+
+DATEPART(yy, SQL Server )        DATEPART(‘yyyy’, Access)   
+
 DATE_PART(‘year’, PostgreSQL)        to_number(to_char(Oracle, 'YYYY'))
-LIMIT 1 
+
+LIMIT 5 OFFSET 5
 
 LEFT(name, 1)    RIGHT(name, 1)
 
 ### Numeric Functions
-ABS()       COS()     SIN()       TAN()       EXP()       PI()      SQRT()  ROUND(123, -2)  CAST(... AS int)
+ABS()       
+COS()     
+SIN()       
+TAN()       
+EXP()       
+PI()      
+SQRT() 
+ROUND(123, -2)  
+CAST(... AS int)
 
 ### Aggregate Function
-AVG(DISTINCT ...)     COUNT()     MAX()      MIN()     SUM()       
+AVG(DISTINCT ...)     
+COUNT()     
+MAX()      
+MIN()     
+SUM()       
 
 ## 7/5/2020
 SELECT … FROM ...
