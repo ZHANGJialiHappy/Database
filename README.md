@@ -1,5 +1,5 @@
 # SQL
-## 2/5/2020 
+## 2/5 
 ### QUERY（SELECT）
 ```
 SELECT …,...,   
@@ -42,7 +42,7 @@ LIMIT 3,5
     
 /*  ….   */   使用注释
 
-## 3/5/2020 
+## 3/5 
 ### Order
 ORDER BY Clause 
 ```
@@ -101,7 +101,7 @@ SELECT .... FROM …
 WHERE NOT … = …
 ```
 
-## 4/5/2020
+## 4/5
 ### 通配符 (Wildcard)
 搜索模式（search pattern）
 谓语 （predicate）
@@ -172,7 +172,7 @@ MAX()
 MIN()     
 SUM()       
 
-## 7/5/2020
+## 7/5
 ```
 SELECT … FROM ...
 WHERE
@@ -181,7 +181,7 @@ HAVING
 ORDER BY
 ```
 
-## 8/5/2020
+## 8/5
 ### SUBQUERY
 ```
 SELECT cust_id
@@ -266,7 +266,7 @@ ON movie.id = casting.movieid
 WHERE movie.title = 'Alien';
 ```
 
-## 10/5/2020
+## 10/5
 ### Union/Compound Query
 ```
 SELECT … FROM …
