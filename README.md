@@ -73,9 +73,10 @@ WHERE … = …
 
 ### WHERE Clause operator
 
-| <> | != | < |
-| > | <= | >= |
-| IS NULL | BETWEEN...AND | !> !< |
+| ------------- |:-------------:| -----:|
+| <>            |  !=           | <     |
+| >             | <= | >= |
+| IS NULL       | BETWEEN...AND | !> !< |
 
 ```
 SELECT … FROM …
