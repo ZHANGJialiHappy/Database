@@ -335,6 +335,20 @@ SELECT *, column
 INTO CustCopy
 FROM Customers;
 ```
+### Update
+Update "Customers" table. A customer's Email is changed to 'kim@thetoystore.com' , and his cust_id is '1000000005'.
+```
+UPDATE Customers
+SET cust_email = 'kim@thetoystore.com' 
+WHERE cust_id = '1000000005';
+```
+### Delete a row
+Delete a customer whose ID is '1000000006'
+```
+DELETE FROM Customers
+WHERE cust_id = '1000000006';
+```
+
 
 
 
