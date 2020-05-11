@@ -294,6 +294,48 @@ FROM game LEFT JOIN goal
   ON matchid = id
 GROUP BY mdate, team1, team2
 ```
+## 11/5
+### Insert row
+```
+INSERT INTO Customers(cust_id,
+                cust_name,
+                cust_address)
+            
+VALUES('001',
+       'May',
+       'Vej')
+```
+### Insert SELECT
+```
+
+INSERT INTO Customers(cust_id,
+                      cust_contact,
+                      cust_email,
+                      cust_name,
+                      cust_address,
+                      cust_city,
+                      cust_state,
+                      cust_zip,
+                      cust_country)
+  
+ SELECT cust_id,
+       cust_contact,
+       cust_email,
+       cust_name,
+       cust_address,
+       cust_city,
+       cust_state,
+       cust_zip,
+       cust_country
+FROM CustNew;
+```
+### Copy a table to another
+```
+SELECT *, column
+INTO CustCopy
+FROM Customers;
+```
+
 
 
 
