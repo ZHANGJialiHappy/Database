@@ -348,6 +348,39 @@ Delete a customer whose ID is '1000000006'
 DELETE FROM Customers
 WHERE cust_id = '1000000006';
 ```
+### Create Table
+```
+CREATE TABLE Products
+(
+    prod_id    CHAR(10)   NOT NULL,
+    order_num  INTEGER    NOT NULL,
+    cust_add   CHAR(50)   ,
+ )
+ ```
+ ### Add a column
+ ```
+ ALTER TABLE Vendors
+ADD vend_phone CHAR(20);
+
+ALTER TABLE Vendors
+DROP COLUMN vend_phone;
+```
+### Delete a table
+```
+DROP TABLE CustCopy;
+```
+### Create a VIEW table
+```
+CREATE VIEW ProductCustomers AS
+SELECT cust_name, cust_contact, prod_id FROM Customers, Orders, OrderItems
+WHERE Customers.cust_id = Orders.cust_id
+AND OrderItems.order_num = Orders.order_num;
+
+SELECT cust_name, cust_contact FROM ProductCustomers
+WHERE prod_id = 'RGAN01';
+```
+
+
 
 
 
