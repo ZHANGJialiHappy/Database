@@ -17,6 +17,9 @@ https://www.datacamp.com/community/tutorials/sql-with-powerbi
 
 ## SQL Practice
 https://sqlzoo.net/wiki/SQL_Tutorial
+
 https://www.w3schools.com/sql/exercise.asp?filename=exercise_in2
+
 https://www.edx.org/course/querying-data-with-transact-sql-2
+
 https://zhuanlan.zhihu.com/p/41844742
