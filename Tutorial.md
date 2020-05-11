@@ -1,6 +1,8 @@
 ## Book list 
 LEAN ANALYTICS Use Data to Build a Better Startup Faster 
+
 SQL in 10 mins
+
 https://zhuanlan.zhihu.com/p/114374048?utm_source=wechat_session&utm_medium=social&utm_oi=659787377384624128
 
 ## Data Analysis in Excel
