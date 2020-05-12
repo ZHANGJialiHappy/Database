@@ -10,6 +10,8 @@ https://www.youtube.com/watch?v=B22arpiRTes&list=PLpJJGMfCMsrXjzelJWSKBI9oYjwVn5
 
 ## Power BI
 ### PowerBI from beginner
+https://www.edx.org/course/analyzing-and-visualizing-data-with-power-bi-2
+https://www.youtube.com/watch?v=AGrl-H87pRU
 https://www.youtube.com/watch?v=1c01r_pAZdk&list=PL1N57mwBHtN0JFoKSR0n-t
 ### Data Modeling
 https://www.youtube.com/watch?v=NLbW9Yft-5M
