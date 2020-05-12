@@ -22,6 +22,7 @@ https://sqlzoo.net/wiki/SQL_Tutorial
 
 https://www.w3schools.com/sql/exercise.asp?filename=exercise_in2
 
-https://www.edx.org/course/querying-data-with-transact-sql-2
-
 https://zhuanlan.zhihu.com/p/41844742
+
+### Transact_SQL
+https://www.edx.org/course/querying-data-with-transact-sql-2
