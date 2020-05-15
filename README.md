@@ -164,6 +164,7 @@ PI()
 SQRT() 
 ROUND(123, -2)  
 CAST(... AS int)
+
 MOD()    /* it is in Oracle*/  a%number /* sql server/
 
 ### Aggregate Function
