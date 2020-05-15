@@ -218,7 +218,7 @@ ANY, ALL
 SELECT … FROM … WHERE …> ANY(Subquery) 
 SELECT … FROM … WHERE …> ALL(Subquery) 
 
-### Operation order:    FROM 》WHERE》GROUP BY》HAVE》SELECT》ORDER BY
+### Operation order:    FROM 》WHERE》GROUP BY》HAVING》SELECT》ORDER BY
 
 ### Join
 WHERE Table.column = table2.column2
