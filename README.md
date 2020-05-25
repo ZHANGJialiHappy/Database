@@ -381,6 +381,8 @@ AND OrderItems.order_num = Orders.order_num;
 SELECT cust_name, cust_contact FROM ProductCustomers
 WHERE prod_id = 'RGAN01';
 ```
+# Useful information
+https://www.w3schools.com/sql/sql_ref_sqlserver.asp
 
 
 
