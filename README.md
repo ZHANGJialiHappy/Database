@@ -391,6 +391,24 @@ FROM (SELECT continent,population,
       FROM world) T
       WHERE ranking<=10
  ```
+ ### Rolling Calculations (e.g. YTD totals)
+ ```
+ SELECT
+       SUM(MonthlySales) OVER (ORDER BY SalesMonth ROWS UNBOUNDED PRECEDING) AS YTDSales
+      ,MonthlySales AS 'M_S'
+      , SalesMonth
+ FROM
+ (SELECT SUM(s.SalesAmount) AS 'MonthlySales',
+        MONTH(s.OrderDate) AS 'SalesMonthly
+ FROM FactInternetSales AS s
+ WHERE YEAR(s.OrderDate)=2017
+ GROUP BY MONTH(s.OrderDate)
+ ) AS s
+ GROUP BY SalesMonthly,M_S
+ ORDER BY SalesMonth ASC
+;
+ 
+ ```
 
 # Useful information
 https://www.w3schools.com/sql/sql_ref_sqlserver.asp
