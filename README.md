@@ -381,6 +381,17 @@ AND OrderItems.order_num = Orders.order_num;
 SELECT cust_name, cust_contact FROM ProductCustomers
 WHERE prod_id = 'RGAN01';
 ```
+### Window function (e.g. catch top 10 in every continent)
+```
+SELECT * 
+FROM (SELECT continent,population, 
+                                 RANK() OVER(
+                                             PARTITION BY continent ORDER BY population DESC
+                                             ) ranking
+      FROM world) T
+      WHERE ranking<=10
+ ```
+
 # Useful information
 https://www.w3schools.com/sql/sql_ref_sqlserver.asp
 
