@@ -141,7 +141,7 @@ REPLACE(‘ABC’, ‘A’, ‘D’, )
 ### Text Function 文本处理函数
 |                                                                 |
 | ---------------------------------------------------------------:|
-|RTRIM(),      LTRIM(),      TRIM()                               |
+|RTRIM(), LTRIM(), TRIM(LEADING | TRAILING | BOTH 'x' FROM string)|
 |NOW()                                                            |
 |LENGTH(),     DATALENGTH(), LEN()                                |
 |LOWER(),      LCASE(Access)                                      |
@@ -153,6 +153,7 @@ REPLACE(‘ABC’, ‘A’, ‘D’, )
 |DATE_PART(‘year’, PostgreSQL), to_number(to_char(Oracle, 'YYYY'))|
 |LIMIT 5 OFFSET 5                                                 |
 |LEFT(name, 1),    RIGHT(name, 1)                                 |
+|LOCATE("3", "W3Schools.com")                                     |
 
 ### Numeric Functions
 ABS()       
@@ -417,6 +418,7 @@ FROM (SELECT continent,population,
  EOMONTH();
  DATEDIFF(interval, date1, date2);
  GETDATE()
+ DATE_FORMAT(last_update, '%D', '%M', %'Y')
  
  ### Common table expressions 
  ```
@@ -434,6 +436,26 @@ FROM (SELECT continent,population,
 |RANK()                           |PERCENT_RANK()                      |
 |DENSE_RNAK()                     |                                    |
 |ROW_NUMBER()                     |                                    |
+
+ ### GROUP_CONCAT()
+ SELECT GROUP_CONCAT(phone ORDER BY phone ASC SEPARATOR ';')
+ 
+ ### Variables
+ ```
+ /* MySQL */
+ SET @varialble = 'PENELOPE';
+ ```
+ ```
+ /* SQL Server */
+ DECLARE @variable varchar(30) = 'PENELOPE';
+ ```
+ ```
+ /* Oracle */
+ DECLARE variable NUMBER;
+ BEGIN
+     SELECT xx FROM Table WHERE Field_name>variable;
+ END;
+ ```
  
 # Useful information
 https://www.w3schools.com/sql/sql_ref_sqlserver.asp
