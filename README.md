@@ -9,7 +9,7 @@ FROM…
 SELECT * FROM
 ```
 ```
-SELECT DISTINCT … 
+SELECT DISTCT … 
 FROM …
 ```
 ```
@@ -381,7 +381,7 @@ AND OrderItems.order_num = Orders.order_num;
 SELECT cust_name, cust_contact FROM ProductCustomers
 WHERE prod_id = 'RGAN01';
 ```
-### Window function (e.g. catch top 10 in every continent)
+### Window function (T-SQL,e.g. catch top 10 in every continent)
 ```
 SELECT * 
 FROM (SELECT continent,population, 
@@ -409,9 +409,41 @@ FROM (SELECT continent,population,
 ;
  
  ```
-
+ ### ISTNULL
+ ```
+ SELECT ISNULL(NULL, 'W3Schools.com')
+ ```
+ ### DATE (T-SQL)
+ EOMONTH();
+ DATEDIFF(interval, date1, date2);
+ GETDATE()
+ 
+ ### Common table expressions 
+ ```
+ WITH A (a1, b2, c3)
+ AS (
+     SELECT a AS a1, b AS b2, SUM(c) AS c3
+     FROM table
+     GROUP BY a, b)
+ SELECT * , CASE WHEN c3>200 THEN 1 ELSE 0 END AS W
+ FROM A
+ ```
+ ### Ranks
+|                                 |                                    |
+| -------------------------------:|-----------------------------------:|
+|RANK()                           |PERCENT_RANK()                      |
+|DENSE_RNAK()                     |                                    |
+|ROW_NUMBER()                     |                                    |
+ 
 # Useful information
 https://www.w3schools.com/sql/sql_ref_sqlserver.asp
+# Check version first!
+|                                 |                                    |
+| -------------------------------:|-----------------------------------:|
+|SELECT @@version                 |Microsoft.                          |
+|SELECT * FROM v$version          |Oracle                              |
+|SELECT version()                 |MySQL, PostgreSQL                   |
+
 
 
 
