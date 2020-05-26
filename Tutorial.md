@@ -19,6 +19,11 @@ https://www.youtube.com/watch?v=1c01r_pAZdk&list=PL1N57mwBHtN0JFoKSR0n-t
 
 https://www.edx.org/course/analyzing-and-visualizing-data-with-power-bi-2
 
+Avialable RAM: 1.5 GB
+CPU: 1 GHz or faster x86- or x64-bit processor
+Display:1440x900 or 1600x900
+Display setting for text 100% or less
+
 ### Data Modeling
 
 https://www.youtube.com/watch?v=NLbW9Yft-5MBkUJHeMP2cP
