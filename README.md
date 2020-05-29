@@ -164,6 +164,8 @@ EXP()
 PI()      
 SQRT() 
 ROUND(123, -2)  
+Floor()
+Ceiling()
 CAST(... AS int)
 
 MOD()    /* it is in Oracle*/  a%number /* sql server/
