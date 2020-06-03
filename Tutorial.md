@@ -36,7 +36,7 @@ https://sqlzoo.net/wiki/SQL_Tutorial
 
 https://www.hackerrank.com/domains/sql
 
-https://www.datacamp.com/courses/introduction-to-sql?utm_source=adwords_ppc&utm_campaignid=897699250&utm_adgroupid=52062052069&utm_device=c&utm_keyword=%2Bpractice%20%2Bsql&utm_matchtype=b&utm_network=g&utm_adpostion=&utm_creative=262616441429&utm_targetid=kwd-353938704460&utm_loc_interest_ms=&utm_loc_physical_ms=1005010&gclid=Cj0KCQjw-_j1BRDkARIsAJcfmTHS4zsuxpP7fYjhDTUqjvmpwjkW_dVwGfHcD13lC5YxhbQScFB4MToaAtu7EALw_wcB
+https://campus.datacamp.com/courses/intermediate-sql/well-take-the-case?ex=6
 
 https://www.w3schools.com/sql/exercise.asp?filename=exercise_in2
 
