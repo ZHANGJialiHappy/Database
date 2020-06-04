@@ -458,6 +458,14 @@ FROM (SELECT continent,population,
      SELECT xx FROM Table WHERE Field_name>variable;
  END;
  ```
+ ### Use case to filter
+ ```
+SELECT *
+FROM table
+WHERE 
+    CASE WHEN a > 5 THEN 'Keep'
+         WHEN a <= 5 THEN 'Exclude' END = 'Keep';
+```
  
 # Useful information
 https://www.w3schools.com/sql/sql_ref_sqlserver.asp
