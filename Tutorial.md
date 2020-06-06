@@ -31,7 +31,7 @@ https://www.youtube.com/watch?v=NLbW9Yft-5MBkUJHeMP2cP
 ### SQL with PowerBI
 https://www.datacamp.com/community/tutorials/sql-with-powerbi
 
-## SQL Practice
+### SQL Practice
 https://sqlzoo.net/wiki/SQL_Tutorial
 
 https://www.hackerrank.com/domains/sql
@@ -41,6 +41,8 @@ https://campus.datacamp.com/courses/intermediate-sql/well-take-the-case?ex=6
 https://www.w3schools.com/sql/exercise.asp?filename=exercise_in2
 
 https://zhuanlan.zhihu.com/p/41844742
+### Resource
+demo sakila database
 
 ### Transact_SQL
 https://www.edx.org/course/querying-data-with-transact-sql-2
