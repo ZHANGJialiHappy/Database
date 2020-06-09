@@ -156,3 +156,22 @@ WHERE area>=ALL(
         WHERE y.continent=x.continent     
 )
 ```
+List each continent and the name of the country that comes first alphabetically.
+```
+/* Solution 1 */
+SELECT continent,name
+FROM (SELECT continent,population, name,
+                                 RANK() OVER(
+                                             PARTITION BY continent ORDER BY name
+                                             ) ranking 
+             FROM world) T
+WHERE ranking=1
+```
+```
+/* Solution 2 */
+SELECT continent, name
+FROM world x
+WHERE name<= ALL (SELECT name FROM world y
+                           WHERE x.continent=y.continent
+                           )
+```
