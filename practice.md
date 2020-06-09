@@ -192,3 +192,17 @@ WHERE population>ALL(SELECT 3*population
                                     WHERE x.continent=y.continent AND x.name!=y.name
                                        )
 ```
+For each continent show the continent and number of countries with populations of at least 10 million.
+```
+SELECT continent, COUNT(*)
+FROM world
+WHERE population>=10000000
+GROUP BY continent
+```
+Show player, teamid, coach, gtime for all goals scored in the first 10 minutes gtime<=10
+```
+SELECT goal.player, goal.teamid, eteam.coach, goal.gtime 
+FROM goal 
+INNER JOIN eteam
+ON  goal.teamid=eteam.id AND gtime<=10
+```
