@@ -206,3 +206,72 @@ FROM goal
 INNER JOIN eteam
 ON  goal.teamid=eteam.id AND gtime<=10
 ```
+List the dates of the matches and the name of the team in which 'Fernando Santos' was the team1 coach.
+```
+SELECT game.mdate, eteam.teamname
+FROM game
+JOIN eteam
+ON game.team1=eteam.id
+WHERE coach='Fernando Santos'
+```
+List the player for every goal scored in a game where the stadium was 'National Stadium, Warsaw'
+```
+SELECT goal.player
+FROM game 
+JOIN goal
+ON game.id=goal.matchid
+WHERE stadium='National Stadium, Warsaw'
+```
+Instead show the name of all players who scored a goal against Germany.(AND is operated before OR)
+```
+SELECT distinct goal.player
+FROM goal
+JOIN game
+ON game.id=goal.matchid
+WHERE (game.team1='GER'or game.team2='GER') AND goal.teamid!='GER'
+```
+Show teamname and the total number of goals scored.
+```
+SELECT eteam.teamname, COUNT(gtime)
+FROM goal
+JOIN eteam
+ON goal.teamid=eteam.id
+GROUP BY eteam.teamname
+
+```
+Show the stadium and the number of goals scored in each stadium.
+```
+SELECT stadium, COUNT(gtime)
+FROM game 
+JOIN goal
+ON game.id=goal.matchid
+GROUP BY game.stadium
+```
+For every match involving 'POL', show the matchid, date and the number of goals scored.
+```
+SELECT goal.matchid,game.mdate,COUNT(gtime)
+FROM goal
+JOIN game
+ON game.id=goal.matchid
+WHERE game.team1='POL' OR game.team2='POL'
+GROUP BY goal.matchid, game.mdate
+```
+For every match where 'GER' scored, show matchid, match date and the number of goals scored by 'GER'
+```
+SELECT goal.matchid,game.mdate,COUNT(gtime)
+FROM goal
+JOIN game
+ON goal.matchid=game.id
+WHERE goal.teamid='GER'
+GROUP BY goal.matchid,game.mdate
+```
+List every match with the goals scored by each team as shown. This will use "CASE WHEN" which has not been explained in any previous exercises.
+```
+SELECT mdate, team1,
+  SUM(CASE WHEN teamid=team1 THEN 1 ELSE 0 END) AS score1, 
+  team2,
+  SUM(CASE WHEN teamid=team2 THEN 1 ELSE 0 END) AS score2
+FROM game LEFT JOIN goal 
+  ON matchid = id
+GROUP BY mdate, matchid,team1, team2
+```
