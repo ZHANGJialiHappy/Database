@@ -8,11 +8,15 @@ ON p.PersonId=a.PersonId
 ```
 Second Highest Salary
 ```
-SELECT TOP 1 Salary AS SecondHighestSalary
-FROM (SELECT TOP 2 Salary
-FROM Employee
-ORDER BY Salary DESC) a
-ORDER BY Salary
+SELECT CASE 
+           WHEN (SELECT COUNT(DISTINCT salary) FROM employee)<2 THEN null
+           ELSE (SELECT MAX(Salary) FROM employee WHERE salary<(SELECT MAX(Salary) FROM employee)) 
+       END as SecondHighestSalary ;
+```
+```
+SELECT CASE WHEN (SELECT COUNT(DISTINCT salary) FROM employee)<2 THEN null
+       ELSE (SELECT MIN(Salary) FROM (SELECT TOP 2 Salary FROM Employee ORDER BY Salary DESC) AS a)
+       END AS SecondHighestSalary
 ```
 # SQLZOO
 Luxembourg has an x - so does one other country. List them both. Find the countries that contain the letter x.
