@@ -1,3 +1,19 @@
+# LeetCode DataBase
+Write a SQL query for a report that provides the following information for each person in the Person table, regardless if there is an address for each of those people: FirstName, LastName, City, State
+```
+SELECT p.FirstName, p.LastName, a.City, a.State
+FROM Person p
+LEFT JOIN Address a
+ON p.PersonId=a.PersonId
+```
+Second Highest Salary
+```
+SELECT TOP 1 Salary AS SecondHighestSalary
+FROM (SELECT TOP 2 Salary
+FROM Employee
+ORDER BY Salary DESC) a
+ORDER BY Salary
+```
 # SQLZOO
 Luxembourg has an x - so does one other country. List them both. Find the countries that contain the letter x.
 ```
