@@ -275,3 +275,81 @@ FROM game LEFT JOIN goal
   ON matchid = id
 GROUP BY mdate, matchid,team1, team2
 ```
+Obtain the cast list for 'Casablanca'.
+```
+SELECT actor.name
+FROM actor
+JOIN casting
+ON actor.id=casting.actorid
+WHERE movieid=(SELECT id
+               FROM movie
+               WHERE title='Casablanca')
+```
+Obtain the cast list for the film 'Alien'
+```
+SELECT actor.name
+FROM actor
+JOIN casting
+ON casting.actorid=actor.id
+JOIN movie
+ON casting.movieid=movie.id
+WHERE title='Alien'
+```
+List the films in which 'Harrison Ford' has appeared
+```
+SELECT title
+FROM movie
+JOIN casting
+ON casting.movieid=movie.id
+JOIN actor
+ON actor.id=casting.actorid
+WHERE actor.name='Harrison Ford'
+```
+List the films where 'Harrison Ford' has appeared - but not in the starring role.
+```
+SELECT title
+FROM movie
+JOIN casting
+ON casting.movieid=movie.id
+JOIN actor
+ON actor.id=casting.actorid
+WHERE actor.name='Harrison Ford' AND casting.ord!=1
+```
+List the films together with the leading star for all 1962 films.
+```
+SELECT movie.title, actor.name
+FROM movie
+JOIN casting
+ON casting.movieid=movie.id
+JOIN actor
+ON actor.id=casting.actorid
+WHERE casting.ord=1 AND yr='1962'
+```
+Which were the busiest years for 'Rock Hudson', show the year and the number of movies he made each year for any year in which he made more than 2 movies.
+```
+SELECT yr, COUNT(*) AS num_movie
+FROM movie
+JOIN casting
+ON casting.movieid=movie.id
+JOIN actor
+ON actor.id=casting.actorid
+WHERE actor.name='Rock Hudson'
+GROUP BY yr
+HAVING COUNT(*)>2
+```
+List the film title and the leading actor for all of the films 'Julie Andrews' played in.
+```
+SELECT title, name
+FROM movie
+JOIN casting
+ON casting.movieid=movie.id
+JOIN actor
+ON actor.id=casting.actorid
+WHERE movie.ID IN (SELECT movie.ID 
+                      FROM movie
+                      JOIN casting
+                      ON casting.movieid=movie.id
+                      JOIN actor
+                      ON actor.id=casting.actorid
+                      WHERE actor.name='Julie Andrews') AND casting.ord=1
+```
