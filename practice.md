@@ -23,7 +23,6 @@ Nth Highest Salary
 CREATE FUNCTION getNthHighestSalary(@N INT) RETURNS INT AS
 BEGIN
     RETURN (
-        /* Write your T-SQL query statement below. */ 
 SELECT CASE WHEN (SELECT COUNT(DISTINCT salary) FROM employee)<@N THEN null
        ELSE (SELECT MIN(Salary) FROM (SELECT TOP (@N) Salary FROM (SELECT DISTINCT Salary FROM Employee) AS S ORDER BY Salary DESC) AS a)
        END AS  getNthHighestSalary
@@ -34,7 +33,6 @@ END
 CREATE FUNCTION getNthHighestSalary(@N INT) RETURNS INT AS
 BEGIN
     RETURN (
-        /* Write your T-SQL query statement below. */ 
 SELECT CASE WHEN (SELECT COUNT(DISTINCT salary) FROM employee)<@N THEN null
        ELSE (SELECT salary
              FROM (SELECT a.Salary, ROW_NUMBER() over(order by salary DESC) AS row_num
