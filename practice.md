@@ -15,8 +15,20 @@ SELECT CASE
 ```
 ```
 SELECT CASE WHEN (SELECT COUNT(DISTINCT salary) FROM employee)<2 THEN null
-       ELSE (SELECT MIN(Salary) FROM (SELECT TOP 2 Salary FROM Employee ORDER BY Salary DESC) AS a)
+       ELSE (SELECT MIN(Salary) FROM (SELECT TOP 2 Salary FROM (SELECT DISTINCT Salary FROM Employee) AS S ORDER BY Salary DESC) AS a)
        END AS SecondHighestSalary
+```
+Nth Highest Salary
+```
+CREATE FUNCTION getNthHighestSalary(@N INT) RETURNS INT AS
+BEGIN
+    RETURN (
+        /* Write your T-SQL query statement below. */ 
+SELECT CASE WHEN (SELECT COUNT(DISTINCT salary) FROM employee)<@N THEN null
+       ELSE (SELECT MIN(Salary) FROM (SELECT TOP (@N) Salary FROM (SELECT DISTINCT Salary FROM Employee) AS S ORDER BY Salary DESC) AS a)
+       END AS  getNthHighestSalary
+  );
+END
 ```
 # SQLZOO
 Luxembourg has an x - so does one other country. List them both. Find the countries that contain the letter x.
