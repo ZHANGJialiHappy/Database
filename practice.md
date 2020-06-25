@@ -42,6 +42,11 @@ SELECT CASE WHEN (SELECT COUNT(DISTINCT salary) FROM employee)<@N THEN null
   );
 END
 ```
+Rank Scores
+```
+SELECT score, dense_rank()over(order by score DESC) AS Rank
+FROM Scores
+```
 # SQLZOO
 Luxembourg has an x - so does one other country. List them both. Find the countries that contain the letter x.
 ```
