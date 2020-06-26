@@ -47,6 +47,19 @@ Rank Scores
 SELECT score, dense_rank()over(order by score DESC) AS Rank
 FROM Scores
 ```
+Consecutive Numbers
+```
+SELECT Distinct l1.Num AS ConsecutiveNums 
+FROM
+    Logs l1,
+    Logs l2,
+    Logs l3
+WHERE
+    l1.Id = l2.Id - 1
+    AND l2.Id = l3.Id - 1
+    AND l1.Num = l2.Num
+    AND l2.Num = l3.Num
+```
 # SQLZOO
 Luxembourg has an x - so does one other country. List them both. Find the countries that contain the letter x.
 ```
