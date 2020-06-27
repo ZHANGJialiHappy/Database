@@ -69,6 +69,14 @@ JOIN Logs l3
 ON l2.Id=l3.Id+1
 WHERE l1.Num=l2.Num AND l2.Num=l3.Num
 ```
+Employees Earning More Than Their Managers
+```
+SELECT emp.Name as Employee
+FROM Employee emp
+JOIN Employee manager
+ON emp.ManagerId=manager.ID
+WHERE emp.Salary>manager.Salary
+```
 # SQLZOO
 Luxembourg has an x - so does one other country. List them both. Find the countries that contain the letter x.
 ```
