@@ -77,6 +77,26 @@ JOIN Employee manager
 ON emp.ManagerId=manager.ID
 WHERE emp.Salary>manager.Salary
 ```
+Department Highest Salary
+```
+SELECT Department.Name Department, T.Name Employee, T.Salary Salary
+FROM (SELECT Employee.Name, Employee.Salary, DepartmentId, RANK()OVER(PARTITION BY DepartmentId Order BY Salary DESC) Ranking FROM Employee ) T
+JOIN Department
+ON T.DepartmentId=Department.Id
+WHERE Ranking = 1
+```
+```
+SELECT DP.Name Department, E.Name Employee, E.Salary Salary
+FROM Employee E
+JOIN (
+SELECT DepartmentId, MAX(Salary) Salary
+FROM Employee
+GROUP BY DepartmentId
+    ) D
+ON E.DepartmentId=D.DepartmentId AND E.Salary=D.Salary
+JOIN Department DP
+ON DP.Id=E.DepartmentId
+```
 # SQLZOO
 Luxembourg has an x - so does one other country. List them both. Find the countries that contain the letter x.
 ```
