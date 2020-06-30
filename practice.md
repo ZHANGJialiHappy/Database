@@ -97,6 +97,21 @@ ON E.DepartmentId=D.DepartmentId AND E.Salary=D.Salary
 JOIN Department DP
 ON DP.Id=E.DepartmentId
 ```
+Delete Duplicate Emails
+```
+WITH uniq AS
+(
+SELECT
+MIN(id) uid
+FROM
+person
+GROUP BY
+email
+ORDER BY Id
+)
+
+DELETE FROM person WHERE id NOT IN (select uid from uniq )
+```
 # SQLZOO
 Luxembourg has an x - so does one other country. List them both. Find the countries that contain the letter x.
 ```
