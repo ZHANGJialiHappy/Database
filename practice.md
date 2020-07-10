@@ -112,6 +112,14 @@ ORDER BY Id
 
 DELETE FROM person WHERE id NOT IN (select uid from uniq )
 ```
+Given a Weather table, write a SQL query to find all dates' Ids with higher temperature compared to its previous (yesterday's) dates.
+```
+SELECT w2.Id
+FROM Weather w1
+JOIN Weather w2
+ON DATEDIFF(day, w1.RecordDate, w2.RecordDate)=1
+WHERE w2.Temperature>w1.Temperature
+```
 # SQLZOO
 Luxembourg has an x - so does one other country. List them both. Find the countries that contain the letter x.
 ```
