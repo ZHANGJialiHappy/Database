@@ -475,3 +475,16 @@ WHERE movie.ID IN (SELECT movie.ID
                       ON actor.id=casting.actorid
                       WHERE actor.name='Julie Andrews') AND casting.ord=1
 ```
+List all the people who have worked with 'Art Garfunkel'.
+```
+SELECT actor.name
+FROM actor
+JOIN casting
+on actor.id=casting.actorid
+WHERE casting.movieid IN (SELECT movieid
+                          FROM casting
+                          JOIN actor
+                          ON actor.id=casting.actorid
+                          WHERE actor.name='Art Garfunkel')
+     AND actor.name!='Art Garfunkel'
+```
