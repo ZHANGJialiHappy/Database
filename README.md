@@ -6,7 +6,17 @@ extract(year from C.held)
 ```
 ```
 to_char(S.recordmax(R.result), '0D99')
-``` 
+```
+### go over
+```
+concat('a','b') : concatenate 2 charactors
+```
+```
+cast(number as varchar(2)) : convert 2 digits number to charactors
+```
+```
+where a is null      where a is not null : assert if a is null
+```
 ## 2/5 
 ### QUERY（SELECT）
 ```
