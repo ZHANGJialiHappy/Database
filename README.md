@@ -7,6 +7,7 @@ extract(year from C.held)
 ```
 to_char(S.recordmax(R.result), '0D99')
 ```
+in postgres, we have join(inner) join, full join, left join, right join
 ### go over
 ```
 concat('a','b') : concatenate 2 charactors
