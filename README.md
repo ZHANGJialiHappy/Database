@@ -1,4 +1,12 @@
 # SQL
+##8/2/2024
+### PostgreSQL-specific code
+```
+extract(year from C.held)
+```
+```
+to_char(S.recordmax(R.result), '0D99')
+``` 
 ## 2/5 
 ### QUERY（SELECT）
 ```
