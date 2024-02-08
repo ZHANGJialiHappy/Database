@@ -1,5 +1,5 @@
 # SQL
-##8/2/2024
+## 8/2/2024
 ### PostgreSQL-specific code
 ```
 extract(year from C.held)
