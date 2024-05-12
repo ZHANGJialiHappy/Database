@@ -1,0 +1,51 @@
+DROP TABLE IF EXISTS Rentals0;
+DROP TABLE IF EXISTS Rentals1;
+DROP TABLE IF EXISTS Rentals3;
+DROP TABLE IF EXISTS Rentals2;
+
+
+
+CREATE TABLE Rentals2 (
+       HZ INT PRIMARY KEY, 
+       HC VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Rentals3 (
+       PID INT PRIMARY KEY, 
+       PN VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Rentals1 (
+       HID INT PRIMARY KEY, 
+       HS VARCHAR(50) NOT NULL,
+       HZ INT NOT NULL REFERENCES Rentals2(HZ)
+);
+
+CREATE TABLE Rentals0 (
+       PID INT NOT NULL REFERENCES Rentals3(PID),
+       HID INT NOT NULL REFERENCES Rentals1(HID), 
+       S INT NOT NULL, 
+       PRIMARY KEY (PID, HID)
+);
+
+INSERT INTO Rentals2
+SELECT distinct HZ, HC
+FROM Rentals;
+
+INSERT INTO Rentals3
+SELECT distinct PID, PN
+FROM Rentals;
+
+INSERT INTO Rentals1
+SELECT distinct HID, HS, HZ
+FROM Rentals;
+
+INSERT INTO Rentals0
+SELECT PID, HID, S
+FROM Rentals;
+
+
+
+
+
+
