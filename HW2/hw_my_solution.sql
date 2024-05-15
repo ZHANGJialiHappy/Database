@@ -58,7 +58,41 @@ having count(distinct cl.countrycode) = (
     where e.empire='Danish Empire')
 
 
+-- 1
+select count(*)
+from empires
+where empire='Iberian'
 
+-- 2
+select count(*)
+from (
+select countrycode
+from countries_continents
+group by countrycode
+having count(continent)>1
+) x
+
+-- 3
+select sum(c.population * cl.Percentage/100)
+from countries c
+join countries_continents cc on c.code=cc.countrycode
+join countries_languages cl on cc.countrycode=cl.countrycode
+where cc.continent='North America' and c.population>80000000 and cl.language='Spanish'
+
+-- 
+select count(*)
+from(
+select cl.language
+from countries_languages cl
+join empires e on cl.countrycode=e.countrycode
+where e.empire='Danish Empire'
+group by cl.language 
+having count(distinct cl.countrycode)= (
+    select count(*)
+    from empires 
+    where empire='Danish Empire'
+    )
+) x
 
 
 
